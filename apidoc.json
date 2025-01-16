@@ -1,0 +1,148 @@
+1)For xetras api
+Url:http://127.0.0.1:8000/api/xetras
+{
+  "message": "successfully fetch",
+  "xetras": [
+    {
+      "id": 1,
+      "name": "Bhavnagar - 1"
+    },
+    {
+      "id": 2,
+      "name": "Bhavnagar - 2"
+    },
+    {
+      "id": 3,
+      "name": "Bhavnagar - 3"
+    }
+  ]
+}
+
+2)get mandal based on xetras
+http://127.0.0.1:8000/api/mandals/1
+{
+    "message": "successfully fetch",
+    "mandals": [
+        {
+            "id": 1,
+            "mandal_name": "Akshardham",
+            "xetra_id": 1
+        },
+        {
+            "id": 2,
+            "mandal_name": "Ambavadi",
+            "xetra_id": 1
+        },
+        {
+            "id": 5,
+            "mandal_name": "Bharatnagar",
+            "xetra_id": 1
+        },
+        {
+            "id": 6,
+            "mandal_name": "Fulvadi",
+            "xetra_id": 1
+        },
+        {
+            "id": 8,
+            "mandal_name": "Hilldrive",
+            "xetra_id": 1
+        },
+        {
+            "id": 9,
+            "mandal_name": "Iscon Mega City",
+            "xetra_id": 1
+        },
+        {
+            "id": 10,
+            "mandal_name": "Kaliyabid",
+            "xetra_id": 1
+        },
+        {
+            "id": 11,
+            "mandal_name": "Kaminiyanagar",
+            "xetra_id": 1
+        },
+        {
+            "id": 14,
+            "mandal_name": "Sagvadi",
+            "xetra_id": 1
+        },
+        {
+            "id": 15,
+            "mandal_name": "Sardarnagar",
+            "xetra_id": 1
+        },
+        {
+            "id": 16,
+            "mandal_name": "Shantinagar",
+            "xetra_id": 1
+        },
+        {
+            "id": 17,
+            "mandal_name": "Shivnarayan",
+            "xetra_id": 1
+        },
+        {
+            "id": 20,
+            "mandal_name": "Swapn Srusti",
+            "xetra_id": 1
+        },
+        {
+            "id": 21,
+            "mandal_name": "SIDSAR",
+            "xetra_id": 1
+        },
+        {
+            "id": 22,
+            "mandal_name": "TAKHTESHWAR HEIGHT",
+            "xetra_id": 1
+        }
+    ]
+}
+->if not avilable then
+http://127.0.0.1:8000/api/mandals/5
+{
+    "message": "successfully fetch",
+    "mandals": []
+}
+
+http://127.0.0.1:8000/api/mandals
+{
+    "error": "xetra_id is required"
+}
+
+3)For Login
+https://54ca-103-56-183-234.ngrok-free.app/api/login
+{
+    "email":"superadmin@gmail.com",
+    "password":"12345678"
+}
+if blank
+{
+    "status": false,
+    "error": "Please Enter Email"
+}
+{
+    "status": false,
+    "error": "Please Enter Password"
+}
+response
+{
+    "status": true,
+    "message": "successfully fetch",
+    "user": {
+        "id": 1,
+        "name": "Superadmin",
+        "email": "superadmin@gmail.com",
+        "email_verified_at": null,
+        "created_at": "2025-01-16T09:41:55.000000Z",
+        "updated_at": "2025-01-16T09:41:55.000000Z"
+    }
+}
+
+For Invald credentail
+{
+    "status": false,
+    "error": "Invalid Credential"
+}
