@@ -146,3 +146,78 @@ For Invald credentail
     "status": false,
     "error": "Invalid Credential"
 }
+
+4)For Logout
+http://127.0.0.1:8000/api/logout
+method:post
+pas berer token get token form login api
+{
+    "status": true,
+    "message": "Logged out successfully."
+}
+
+5)For check-logi
+http://127.0.0.1:8000/api/check-login
+method:get
+if token expire or wrong
+{
+    "message": "Unauthenticated."
+}
+
+{
+    "status": true,
+    "message": "successfully fetch"
+}
+
+6)booking save
+https://54ca-103-56-183-234.ngrok-free.app/api/booking/save
+{
+    "name":"krishna",
+    "mobile_number":"98252899981",
+    "booking_date":"16/01/25",
+    "xetra_id":"1",
+    "mandal_id":"1"
+}
+
+7)setting get
+http://127.0.0.1:8000/api/setting'
+{
+    "status": true,
+    "messgae": "Successfully fetch",
+    "setting": {
+        "start_date": "2025-01-16",
+        "id": 6
+    }
+}
+8)booking view
+http://127.0.0.1:8000/api/booking/view
+
+{
+    "status": true,
+    "messgae": "Successfully fetch",
+    "booking": [
+        {
+            "id": 4,
+            "name": "krishna",
+            "mobile_number": "98252899981",
+            "booking_date": "2025-01-16",
+            "xetra_id": 1,
+            "mandal_id": 1,
+            "xetra": {
+                "id": 1,
+                "name": "Bhavnagar - 1"
+            },
+            "manadal": {
+                "id": 1,
+                "mandal_name": "Akshardham"
+            }
+        },
+       
+    ]
+}
+if not found
+{
+    "status": false,
+    "messgae": "No Found",
+    "booking": []
+}
